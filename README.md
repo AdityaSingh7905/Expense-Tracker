@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Personal Expense Tracker
 
-## Getting Started
+## 🚀 Introduction
+The **Personal Expense Tracker** is a full-stack web application designed to help users track their income, expenses, and budget. It provides **interactive charts, category-wise breakdowns, and spending insights** to make financial management easier.
 
-First, run the development server:
+## 🛠️ Tech Stack
+### **Frontend:**
+- **Next.js** (App Router) – React framework for server-side rendering and static generation.
+- **Tailwind CSS** – For styling and responsiveness.
+- **shadcn/ui** – For elegant UI components.
+- **Recharts** – For visualizing financial data with graphs.
+- **Context API** – For global state management.
 
+### **Backend:**
+- **Node.js** – JavaScript runtime for the backend.
+- **Express.js** – Web framework for building APIs.
+- **MongoDB (Mongoose)** – NoSQL database for storing transactions.
+
+### **Deployment:**
+- **Frontend:** Vercel (https://expense-tracker-psi-blue.vercel.app/)
+- **Database:** MongoDB Atlas
+
+---
+## 🎯 Features
+### **🌟 Stage 1: Basic Transaction Tracking**
+- ✅ Add, edit, delete transactions.
+- ✅ View a list of all transactions.
+- ✅ Monthly expenses bar chart.
+- ✅ Form validation.
+
+### **📊 Stage 2: Categorization & Dashboard Enhancements**
+- ✅ Predefined transaction categories.
+- ✅ Category-wise **Pie Chart**.
+- ✅ Dashboard with:
+  - Total expenses summary.
+  - Category breakdown.
+  - Most recent transactions.
+
+### **💰 Stage 3: Budgeting & Insights**
+- ✅ Set monthly budgets for each category.
+- ✅ Budget vs. actual comparison chart.
+- ✅ Spending insights.
+
+---
+## 🚀 Setup & Installation
+### **1️⃣ Clone the Repository**
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/AdityaSingh7905/Expense-Tracker.git
+cd Expense-Tracker
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### **2️⃣ Install Dependencies**
+#### Frontend:
+```bash
+npm install
+```
+#### Backend:
+```bash
+cd backend
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### **3️⃣ Set Up Environment Variables**
+Create a `.env` file in the`backend` folder with the following values:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+#### **Backend (.env)**
+```
+MONGO_URI=your-mongodb-connection-string
+PORT=8000
+```
 
-## Learn More
+### **4️⃣ Run the Application**
+#### Start Backend Server:
+```bash
+cd backend
+nodemon index.js or node index.js
+```
+#### Start Frontend Server:
+```bash
+npm run dev
+```
+Now, visit **`http://localhost:3000`** to see the application in action!
 
-To learn more about Next.js, take a look at the following resources:
+---
+## 📜 API Endpoints
+| Method | Endpoint | Description |
+|--------|---------|-------------|
+| **GET** | `/api/budgets` | Get all budgets |
+| **POST** | `/api/budgets` | Add a new category budget |
+| **GET** | `/api/transactions` | Get all transactions |
+| **POST** | `/api/transactions` | Add a new transaction |
+| **PUT** | `/api/transactions/:id` | Update a transaction |
+| **DELETE** | `/api/transactions/:id` | Delete a transaction |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
